@@ -111,7 +111,7 @@ abstract class Kohana_ORM_Nested_Sets extends ORM{
      */
     public function get_next_sibling()
     {
-        return $this->scope(
+        return $this->and_scope(
             self::factory($this->object_name())
                 ->where($this->left_column, '=', $this->{$this->right_column} + 1)
         )->find();

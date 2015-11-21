@@ -833,7 +833,7 @@ abstract class Kohana_ORM_Nested_Sets extends ORM{
                 $update = DB::update($this->table_name())
                     ->value($this->left_column, DB::expr("{$this->left_column} + $diff"))
                     ->value($this->right_column, DB::expr("{$this->right_column} + $diff"))
-                    ->value($this->level_column, DB::expr("{$this->level_column} + $old_level"));
+                    ->value($this->level_column, DB::expr("{$this->level_column} - $old_level"));
                 if ($this->use_scope)
                 {
                     $update->value($this->scope_column, $new_scope)->where($this->scope_column, '=', $old_scope);

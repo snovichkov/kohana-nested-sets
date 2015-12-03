@@ -58,7 +58,7 @@ abstract class Kohana_ORM_Nested_Sets extends ORM{
      */
     public function has_prev_sibling()
     {
-        return $this->is_valid_node($this->get_prev_sibling());
+        return $this->get_prev_sibling()->is_valid_node();
     }
 
     /**
